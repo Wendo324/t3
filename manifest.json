@@ -1,0 +1,18 @@
+// manifest.json
+{
+  "manifest_version": 2,
+  "name": "Data Collection Notifier",
+  "version": "1.0",
+  "description": "Notify users when their personal data is being collected by a web application.",
+  "permissions": ["activeTab"],
+  "background": {
+    "scripts": ["backgroundScript.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
